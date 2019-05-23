@@ -114,28 +114,21 @@ class AnimelistController extends Controller
     }
 
     //BORRAR EPISODIO
-
-
-    //<form action="{{ url('animelist/show/' . $anime->id) }}" method="POST">
-    //<button type="submit" href="{{ action('AnimelistController@getdeleteep') }}" class="btn btn-default"><i class="fa fa-times"></i> Delete</button>
-    //</form>
-
-    public function deleteep($id)  //Con esta funcion  EDITAMOS-->EPISODIO
+    public function deleteep($id)  
     {
         $anime_id = Episodio::findOrFail($id);//para perservar la ID en otra variable antes de destruirla
         $Episodio = Episodio::where('id', $id)->delete();
         return redirect('/animelist/show/' . $anime_id->anime_id);
-       // return redirect('/animelist' );
-
-        //return view('/animelist/show/' . $Episodio->anime_id, array('Episodio' => $Episodio));
-
+      
     }
-    //public function postdeleteep(Request $request, $id)  //Con esta funcion  EDITAMOS-->EPISODIO
-    //{
-    //   $Epidosio = Episodio::delete($id);
-    //   return redirect('/animelist/show/' . $Episodio->anime_id);
-    //}
     
-    
+
+    public function viewep($id) //FUncion para mostrar el EP
+    {
+        $Episodio = Episodio::findOrFail($id);
+        //dd($Episodio->id);
+        return view('/animelist/viewep',array('Episodio' => $Episodio));//. $Episodio->id);
+        //return array('Episodio' => $Episodio->id); 
+    }
     
 }

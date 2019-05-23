@@ -49,10 +49,11 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('editep/{id}', 'AnimelistController@getEditep'); //Get edit EPisodio
         Route::put('editep/{id}', 'AnimelistController@putEditep');//add informacion en BD y redirecionar
 
+        Route::get('viewep/{id}','AnimelistController@viewep');//VER EPISODIO
+
         Route::get('deleteep/{id}','AnimelistController@deleteep');//Funciona *_* DELETE de EP
 
-        //Route::get('', 'AnimelistController@getdeleteep');//POSIBLEMENTE MAL
-        //Route::post('', 'AnimelistController@postdeleteep');//POSIBLEMENTE MAL
+        
 
         //INDEX
 

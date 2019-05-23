@@ -28,7 +28,7 @@
             
             @foreach( $Episodios as $Episodio )
                 <p>
-                <a class="btn btn-outline-info" href="">{{$Episodio->title}}</a> 
+                <a class="btn btn-outline-info" href="{{ url('/animelist/viewep/' . $Episodio->id )}}">{{$Episodio->title}}</a> 
                 <a class="btn" href="{{ url('/animelist/editep/' . $Episodio->id ) }}">Mod-EP </a> 
                 <a href="/animelist/deleteep/{{$Episodio->id}}">Delete</a>
 
