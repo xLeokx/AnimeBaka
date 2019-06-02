@@ -14,7 +14,7 @@ class CreateEpisodiosTable extends Migration
     public function up()
     {
         Schema::create('episodios', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('id');
             $table->string('ruta')->nullable();
             $table->string('title');
             $table->integer('anime_id')->unsigned();//saber el anime con el que esta relacionada esta serie

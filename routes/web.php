@@ -53,6 +53,13 @@ Route::group(['middleware' => 'auth'], function(){
 
         Route::get('deleteep/{id}','AnimelistController@deleteep');//Funciona *_* DELETE de EP
 
+        //FAV
+
+        //Route::get('/{anime_id}{user_id}','AnimelistController@postfav');
+        //Route::get('/{misfav_id}{anime_id}{user_id}','AnimelistController@deletefav');
+        //<a href="{{ url('/animelist/'. $misfav->id .$anime->id . $user = auth()->user()->id) }}"> <i class="glyphicon glyphicon-star" style="color:yellow"></i></a>
+        //<a href="{{ url('/animelist/'.$anime->id . $user = auth()->user()->id) }}"> <i class="glyphicon glyphicon-star" style="color:black"></i></a>
+
         
 
         //INDEX

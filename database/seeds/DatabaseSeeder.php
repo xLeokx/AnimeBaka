@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Anime;
 use App\User;
 use App\Episodio;
+use App\Favorito;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,33 +16,39 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-          self::seedAnime();
-          $this->command->info('Tabla anime inicializada con datos!');
+          //$this->call(UsersTableSeeder::class);
+          self::seedBORRAR();
+
           self::seedUsers();
           $this->command->info('Tabla usuarios inicializada con datos!');
+          self::seedAnime();
+          $this->command->info('Tabla anime inicializada con datos!');
           self::seedEpisodios();
           $this->command->info('Tabla episodios inicializada con datos!');
+          self::seedFavoritos();
+          $this->command->info('Tabla FAV inicializada con datos!');
+         
     }
 
-      private static function seedAnime() //creamos el anime dandole los valores del array 
+    private static function seedBORRAR() //creamos el anime dandole los valores del array 
     {
-    
-        //DB::table( 'animes' )->statement('SET FOREIGN_KEY_CHECKS = 0;');
-        //DB::table( 'animes' )->truncate();
-        //DB::table( 'animes' )->statement('SET FOREIGN_KEY_CHECKS = 1;');
-        //Anime::statement('SET FOREIGN_KEY_CHECKS = 0;');
-        //Anime::truncate();//borramos todo antes de crearlo
-        //Anime::statement('SET FOREIGN_KEY_CHECKS = 1;');
-        
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0;'); 
+        Favorito::truncate();
+        Anime::truncate();
+        Episodio::truncate();
+        User::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1;'); 
+    }
+    private static function seedAnime() //creamos el anime dandole los valores del array 
+    {    
         foreach( self::$arrayAnimes as $anime ) {
             $p = new anime;
             $p->title = $anime['title'];
             $p->year = $anime['year'];
             $p->director = $anime['director'];
             $p->poster = $anime['poster'];
- 	    $p->genero = $anime['genero'];
-	    $p->nota = $anime['nota'];
+ 	        $p->genero = $anime['genero'];
+	        $p->nota = $anime['nota'];
             $p->synopsis = $anime['synopsis'];
             $p->save();
         }
@@ -49,13 +56,6 @@ class DatabaseSeeder extends Seeder
     private static function seedEpisodios() //creamos el Episodio dandole los valores del array 
     {
 
-        //DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
-        //DB::table( 'episodios' )->truncate();
-        //DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0;'); // DESACTIVA revision de claves foraneas en la base de datos
-        Episodio::truncate(); //borramos todo antes de crearlo PERO debemos desactivar FOREIGN KEY
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1;'); // ACTIVA revision de claves foraneas en la base de datos
-        
         foreach( self::$arrayEpisodios as $episodio ) {
             $p = new episodio;
             $p->title = $episodio['title'];
@@ -64,10 +64,20 @@ class DatabaseSeeder extends Seeder
             $p->save();
         }
     }
+    private static function seedFavoritos() 
+    {
+        foreach( self::$arrayFavoritos as $favorito ) {
+            $p = new Favorito;
+            $p->anime_id = $favorito['anime_id'];
+            $p->user_id = $favorito['user_id'];
+            $p->save();
+        }
+    }
+
+    
     
     private static function seedUsers() //creamos el usuario
     {
-        User::truncate();//borramos todo antes de crearlo
         User::create([
                 'name' => 'leok1',
                 'email' => 'leok@gmail.com',
@@ -132,6 +142,14 @@ class DatabaseSeeder extends Seeder
             'anime_id' => '1'
         )
 
+    );
+
+    private static $arrayFavoritos = array(
+      
+        array(
+            'user_id'=>'1',
+            'anime_id' => '1'
+        )
     );
     
    

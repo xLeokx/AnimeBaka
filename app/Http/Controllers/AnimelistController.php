@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Anime;
 use App\Episodio;
+use App\Favorito;
+use App\User;
 
 class AnimelistController extends Controller
 {
@@ -15,8 +17,18 @@ class AnimelistController extends Controller
 
     public function getIndex()
     {
+        $user = auth()->user()->id;
+        $items[]=0;
+        $arrayFavoritos = Favorito::all()->where('user_id', $user);
+
+
+        foreach($arrayFavoritos as $favoritos) {
+            $items[] = $favoritos->id;
+        }
+        
+        $arrayAnimesFavoritos = Anime::all()->whereIn('id', $items);
         $arrayAnimes = Anime::all();
-        return view('animelist.index', array('arrayAnimes'=> $arrayAnimes));
+        return view('animelist.index', array('arrayAnimesFavoritos'=> $arrayAnimesFavoritos), array('arrayAnimes'=> $arrayAnimes)  );
     }
 
     //ENSEÑA EL ANIME SELLECIONADO
@@ -29,8 +41,8 @@ class AnimelistController extends Controller
        
     }
 
-    //AÑADE NUEVO EPISODIO 
-
+    
+    //AÑADE NUEVO ANIME
     
     public function getCreateep($id)//episodio
     {
@@ -54,14 +66,15 @@ class AnimelistController extends Controller
         return redirect('/animelist');
     }
     
-    //AÑADE NUEVO ANIME
+    
+    //AÑADE NUEVO EPISODIO 
 
     public function getCreate()//anime
     {
         return view('animelist.create');
     }
     
-    public function postCreateep(Request $request, $anime) //añade anime
+    public function postCreateep(Request $request, $anime) //añade EPISODIO
     {
         $Episodio = new Episodio();
         $Episodio->title = $request->title;
@@ -130,5 +143,31 @@ class AnimelistController extends Controller
         return view('/animelist/viewep',array('Episodio' => $Episodio));//. $Episodio->id);
         //return array('Episodio' => $Episodio->id); 
     }
+
+    //FAVORITOS ADD, DELETE
+
+   
+    public function postfav($anime_id,$user_id) 
+    {
+        $user = auth()->user()->id;
+        //dd($anime_id);
+        //dd($user_id);
+        $favoritos = new Favorito();
+        $favoritos->anime_id = $anime_id;
+        $favoritos->user_id = $user_id;
+        $favoritos->save();
+        return redirect('/animelist');
+    }
+
+    public function deletefav($misfav,$anime_id,$user_id)  
+    {
+       
+        $fav = Favorito::where('id', $misfav)->destroy();
+        
+        return redirect('/animelist');
+      
+    }
+
+   
     
 }
