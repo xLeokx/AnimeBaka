@@ -23,7 +23,7 @@ class AnimelistController extends Controller
 
 
         foreach($arrayFavoritos as $favoritos) {
-            $items[] = $favoritos->id;
+            $items[] = $favoritos->anime_id;
         }
         
         $arrayAnimesFavoritos = Anime::all()->whereIn('id', $items);
@@ -139,31 +139,64 @@ class AnimelistController extends Controller
     public function viewep($id) //FUncion para mostrar el EP
     {
         $Episodio = Episodio::findOrFail($id);
-        //dd($Episodio->id);
-        return view('/animelist/viewep',array('Episodio' => $Episodio));//. $Episodio->id);
-        //return array('Episodio' => $Episodio->id); 
+        $Anime = $Episodio->anime_id;
+        //anterior EP
+        $Previous = Episodio::all()->where('anime_id','=', $Anime)->where('id', '<', $Episodio->id) ->sortByDesc('id')->first();
+        //proximo EP
+        $Next = Episodio::all()->where('anime_id','=', $Anime)->where('id', '>', $Episodio->id)->sortBy('id')->first();
+
+        if($Previous==''){
+            $Previous = Episodio::findOrFail($id);
+        } 
+        if($Next==''){
+            $Next = Episodio::findOrFail($id);
+        } 
+            
+
+        return view('/animelist/viewep', ['Episodio' => $Episodio,
+        'Anime' => $Anime,
+        'Previous' => $Previous,
+        'Next' => $Next]);
+        
+        
+        
+      
+        
     }
 
     //FAVORITOS ADD, DELETE
 
    
-    public function postfav($anime_id,$user_id) 
+    public function postfav($anime_id) 
     {
         $user = auth()->user()->id;
-        //dd($anime_id);
-        //dd($user_id);
-        $favoritos = new Favorito();
-        $favoritos->anime_id = $anime_id;
-        $favoritos->user_id = $user_id;
-        $favoritos->save();
+
+        $existe = Favorito::all()->where('anime_id', $anime_id)->where('user_id', $user)->first();;
+
+        //dd($existe);
+
+        if($existe==null){
+            $favoritos = new Favorito();
+            $favoritos->anime_id = $anime_id;
+            $favoritos->user_id = $user;
+            $favoritos->save();
+        }else{
+
+            return redirect('/animelist');
+
+        }
+        
         return redirect('/animelist');
     }
 
-    public function deletefav($misfav,$anime_id,$user_id)  
+    public function deletefav($id, $title)  
     {
+        $user = auth()->user()->id;
        
-        $fav = Favorito::where('id', $misfav)->destroy();
-        
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0;'); 
+        $fav = Favorito::all()->where('anime_id', $id)->where('user_id', $user)->first()->delete();
+        //dd(Favorito::all()->where('anime_id', $id)->where('user_id', $user));
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1;'); 
         return redirect('/animelist');
       
     }

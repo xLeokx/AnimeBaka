@@ -12,14 +12,18 @@
                     <li class="nav-item {{ Request::is('animelist') && ! Request::is('animelist/create')? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/animelist')}}">
                             <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                            Catálogo
+                            Inicio
                         </a>
                     </li>
+                    @if(Auth::user()->is_admin == "true")
                     <li class="nav-item {{  Request::is('animelist/create') ? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/animelist/create')}}">
                             <span>&#10010</span> Nuevo Anime
                         </a>
                     </li>
+             
+             @endif
+                    
                 </ul>
 
                 <ul class="navbar-nav navbar-right">
