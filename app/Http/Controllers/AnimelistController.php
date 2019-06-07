@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Anime;
@@ -26,9 +27,30 @@ class AnimelistController extends Controller
             $items[] = $favoritos->anime_id;
         }
         
-        $arrayAnimesFavoritos = Anime::all()->whereIn('id', $items);
-        $arrayAnimes = Anime::all();
-        return view('animelist.index', array('arrayAnimesFavoritos'=> $arrayAnimesFavoritos), array('arrayAnimes'=> $arrayAnimes)  );
+        $arrayAnimesFavoritos = Anime::all()->whereIn('id', $items)->sortByDesc('updated_at');
+        $arrayAnimes =  Anime::paginate(12);
+        
+        //dd($arrayAnimes);
+        return view('animelist.index',array('arrayAnimesFavoritos'=> $arrayAnimesFavoritos),   array('arrayAnimes'=> $arrayAnimes)  );
+    }
+    public function search(request $request)
+    {
+        $search = $request->get('search');
+        $arrayAnimes = Anime::where('title', 'like', '%'.$search.'%')->paginate(12);
+
+
+        
+
+
+        $user = auth()->user()->id;$items[]=0;
+        $arrayFavoritos = Favorito::all()->where('user_id', $user);
+        foreach($arrayFavoritos as $favoritos){$items[] = $favoritos->anime_id;}
+        $arrayAnimesFavoritos = DB::table('animes')->wherein('id', $items)->where('title', 'like', '%'.$search.'%')->get();
+        //dd($arrayAnimesFavoritos);
+
+
+
+        return view('animelist.index', array('arrayAnimes'=> $arrayAnimes),array('arrayAnimesFavoritos'=> $arrayAnimesFavoritos));
     }
 
     //ENSEÑA EL ANIME SELLECIONADO
@@ -146,10 +168,10 @@ class AnimelistController extends Controller
         $Next = Episodio::all()->where('anime_id','=', $Anime)->where('id', '>', $Episodio->id)->sortBy('id')->first();
 
         if($Previous==''){
-            $Previous = Episodio::findOrFail($id);
+            $Previous = '1';//Episodio::findOrFail($id);//null
         } 
         if($Next==''){
-            $Next = Episodio::findOrFail($id);
+            $Next = '1'; //Episodio::findOrFail($id);
         } 
             
 
@@ -157,17 +179,11 @@ class AnimelistController extends Controller
         'Anime' => $Anime,
         'Previous' => $Previous,
         'Next' => $Next]);
-        
-        
-        
-      
-        
     }
 
     //FAVORITOS ADD, DELETE
 
-   
-    public function postfav($anime_id) 
+    public function postfav($anime_id, $title) 
     {
         $user = auth()->user()->id;
 
@@ -181,15 +197,17 @@ class AnimelistController extends Controller
             $favoritos->user_id = $user;
             $favoritos->save();
         }else{
-
-            return redirect('/animelist');
+            DB::statement('SET FOREIGN_KEY_CHECKS = 0;'); 
+            $fav = Favorito::all()->where('anime_id', $anime_id)->where('user_id', $user)->first()->delete();
+            //dd(Favorito::all()->where('anime_id', $id)->where('user_id', $user));
+            DB::statement('SET FOREIGN_KEY_CHECKS = 1;'); 
 
         }
         
         return redirect('/animelist');
     }
 
-    public function deletefav($id, $title)  
+    /* public function deletefav($id, $title)  
     {
         $user = auth()->user()->id;
        
@@ -199,7 +217,9 @@ class AnimelistController extends Controller
         DB::statement('SET FOREIGN_KEY_CHECKS = 1;'); 
         return redirect('/animelist');
       
-    }
+
+    }*/
+    
 
    
     

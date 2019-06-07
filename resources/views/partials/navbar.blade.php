@@ -15,14 +15,19 @@
                             Inicio
                         </a>
                     </li>
-                    @if(Auth::user()->is_admin == "true")
+                    @if(Auth::user()->is_admin == true)
                     <li class="nav-item {{  Request::is('animelist/create') ? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/animelist/create')}}">
                             <span>&#10010</span> Nuevo Anime
                         </a>
                     </li>
+                    
              
              @endif
+             <form class="form-inline" action="{{url('animelist/search')}}" method="get">
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
                     
                 </ul>
 

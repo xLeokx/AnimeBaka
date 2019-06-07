@@ -80,10 +80,16 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
                 'name' => 'leok1',
-                'email' => 'leok@gmail.com',
-                'password' => bcrypt('alumno')
-                //'is_admin'=>true
+                'email' => 'leokadmin@gmail.com',
+                'password' => bcrypt('alumno'),
+                'is_admin'=>true
         ]);
+        User::create([
+            'name' => 'leok1',
+            'email' => 'leok@gmail.com',
+            'password' => bcrypt('alumno'),
+            'is_admin'=>false
+    ]);
     }
 
  private static $arrayAnimes = array(
@@ -115,30 +121,264 @@ class DatabaseSeeder extends Seeder
              y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
              Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
              las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
+        ),
+        array(
+            'title' => 'Dororo',
+            'year' => '2019',
+            'director' => 'Kazuhiro Furuhashi',
+            'poster' => 'https://animeflv.net/uploads/animes/covers/3077.jpg',
+	    'genero' => 'Ficcion',
+	    'nota' => '9',
+            'synopsis' => 'Daigo Kagemitsu es un temible samurái que entregó su futuro hijo a demonios, a cambio de ver cumplido su sueño de conquistar el país. Al cabo del tiempo,
+             nació un niño deforme, al que faltaban cuarenta y ocho partes de su cuerpo. Su ambicioso padre lo arrojó al río, pero el pequeño logró sobrevivir 
+             y, con el tiempo, convertirse en un diestro espadachín llamado Hyakkimaru, «pequeño monstruo». Años después, con la ayuda del joven y avispado 
+             Dororo, quien afirma ser el mejor ladrón de Japón, Hyakkimaru emprenderá un viaje a lo largo del cual se enfrentará a los demonios para recuperar 
+             las partes de su cuerpo.'
         )
     );
 
     private static $arrayEpisodios = array(
       
         array(
-            'title' => 'Episodios 1 como empezar con laravel',
-            'ruta' => 'app/videos',
+            'title' => 'Episodios 1',
+            'ruta' => '/media/videoplayback.mp4',
             'anime_id' => '1'
         ),array(
-            'title' => 'Episodios 2 como crear rutas',
-            'ruta' => 'app/videos',
+            'title' => 'Episodios 2',
+            'ruta' => '/media/videoplayback.mp4',
             'anime_id' => '1'
         ),array(
-            'title' => 'Episodios 3 como relacionar datos',
-            'ruta' => 'app/videos',
+            'title' => 'Episodios 3',
+            'ruta' => '/media/videoplayback.mp4',
             'anime_id' => '1'
         ),array(
-            'title' => 'Episodios 4 como NO suicidarse',
-            'ruta' => 'app/videos',
+            'title' => 'Episodios 4',
+            'ruta' => '/media/videoplayback.mp4',
             'anime_id' => '1'
         ),array(
-            'title' => 'Episodios 5 como NO suspender',
-            'ruta' => 'app/videos',
+            'title' => 'Episodios 5',
+            'ruta' => '/media/videoplayback.mp4',
             'anime_id' => '1'
         )
 

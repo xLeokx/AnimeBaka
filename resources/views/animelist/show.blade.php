@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo asset('css/animecards.css')?>" type="text/css">
 
     <div class="row">
 
@@ -9,6 +11,8 @@
             <a href="{{ url('/animelist/show/' . $anime->id ) }}">
                 <img src="{{$anime->poster}}" style="height:220px"/>
             </a>
+            
+            
 
         </div>
         <div class="col-sm-8">
@@ -18,10 +22,13 @@
             <h6>Director: {{$anime->director}}</h6>
             <p><strong>Resumen:</strong> {{$anime->synopsis}}</p>
 
+            
+            
+
 
             
             <a class="btn btn-outline-info" href="{{ action('AnimelistController@getIndex') }}">Volver al listado</a>
-            @if(Auth::user()->is_admin == "true")
+            @if(Auth::user()->is_admin == true)
             <a class="btn btn-warning" href="{{ url('/animelist/edit/' . $anime->id ) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Editar An&iacute;me</a>
              <a class="nav-link" href="{{url('/animelist/createep/' . $anime->id)}}"> Nuevo Episodio</a>
              @endif
@@ -31,7 +38,7 @@
             @foreach( $Episodios as $Episodio )
                 <p>
                 <a class="btn btn-outline-info" href="{{ url('/animelist/viewep/' . $Episodio->id )}}">{{$Episodio->title}}</a> 
-                @if(Auth::user()->is_admin == "true")
+                 @if(Auth::user()->is_admin == true)
                 <a class="btn" href="{{ url('/animelist/editep/' . $Episodio->id ) }}">Mod-EP </a> 
                 <a href="/animelist/deleteep/{{$Episodio->id}}">Delete</a>
                 @endif

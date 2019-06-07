@@ -54,15 +54,14 @@ Route::group(['middleware' => 'auth'], function(){
 
         //FAV
 
-        Route::get('/{anime_id}','AnimelistController@postfav');
-        Route::get('/{misfav}/{title}','AnimelistController@deletefav');
+        Route::get('/{anime_id}/{title}','AnimelistController@postfav');
+        //Route::get('/{misfav}/{title}','AnimelistController@deletefav');
         
-        
-
-        //INDEX
+        //INDEX AND SEARCH
 
         Route::get('/', 'AnimelistController@getIndex');
-        Route::put('changeRented/{id}', 'AnimelistController@changeRented'); // borrar
+        Route::get('/search', 'AnimelistController@search');
+       // Route::put('changeRented/{id}', 'AnimelistController@changeRented'); // borrar
     });
 });
 
