@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Acme&display=swap);
+
+body{
+    background-color: rgb(26, 26, 26);
+    font-family: 'Acme', sans-serif;
+}
+
+#btn{
+    padding: 15px;
+    border-radius: 10px;
+    background:rgb(31, 31, 31) ;
+    border-color: rgb(29, 29, 29) ;
+    color: #cccccc;
+    background:rgb(12, 12, 12) ;
+    margin-right: 9px;
+  }
+  
+  #btn:hover{
+    border-color: rgb(202, 202, 202) ;
+    color: rgb(255, 162, 100)
+
+  }
+  #box_episodio{
+    background-color: rgb(31, 31, 31);
+    border-radius: 10px;
+  }
+  video{
+      border: solid;
+      border-color: orange;
+      border-radius: 10px;
+  }
+  h4{
+    color: rgb(255, 172, 78);
+    font-weight: 600;
+    font-size: 25px;
+    transition:  0.3;
+  }
+  h4:hover{
+    color: rgb(255, 150, 29);
+    transition:  0.3;
+   
+    
+  }
+

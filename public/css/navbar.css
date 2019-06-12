@@ -1,12 +1,12 @@
-.navbar{
-   
-    
+@import url(https://fonts.googleapis.com/css?family=Acme&display=swap);
+body{
+    font-family: 'Acme', sans-serif;
   }
 
 #nav_color{
-    background-color: #383838;
+    background-color: #242424;
     border: solid;
-    border-top-color:#e68b03;
+    border-top: none;
     border-right: none;
     border-left: none;
     border-bottom-color:#e68b03;
@@ -16,7 +16,7 @@
 }
 #search_box{
     position: absolute;
-    left: 35%;
+    left: 42%;
     background-color: #e68b03;
     height: 55px;
     border-radius: 30px;
@@ -49,19 +49,12 @@
     height: 50px;
     margin-right: 9px;
 }
-
-
-
-#logo_nav{
-    color: #ffab2c;
-    margin-left: 30px;
-    transition: 0.9s ;
-}
 #nav_inicio{
-    color: #ffab2c;
-    margin-left: 30px;
+    color: #ffab2c !important;
     font-size: 20px;
     transition: 0.3s ;
+    text-decoration: none !important;
+    
       
 }
 #search_box :hover > #search_input {
@@ -76,13 +69,11 @@
     
     
 }
-#logo_nav :hover{
-    color:  #b46c00;
-    transition: 0.3s ;
-}
+
 #nav_color :hover{
-    border-color: #b46c00;
+    
     transition: 0.3s ;
+
 }
 #nav_inicio :hover{
     color:  #b46c00;
@@ -93,6 +84,29 @@
     border-color: #ffab2c;
     transition: 0.3s ;
 }
+#items{
+    border-radius: 10px;
+    border:solid;
+    border-color: rgba(255, 166, 0, 0);
+    color: orange !important;
+}
+#items:hover{
+    
+    border-color: orange;
+    
+}
+
+#cerrarsesion{
+    color: orange !important;
+    font-size: 20px;
+}
+#logo{
+  
+   width: 80px;
+   height: 80px;
+  
+  }
+
 
 
 

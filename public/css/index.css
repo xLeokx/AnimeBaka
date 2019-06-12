@@ -1,10 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Acme&display=swap);
+
+
 body{
-    background-color: rgb(31, 31, 31)
+    background-color: rgb(31, 31, 31);
+    font-family: 'Acme', sans-serif;
 }
-
-
 #mybtn {
-    
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -45,10 +46,9 @@ body{
     text-align: center !important;
   }
   .card {
-    font-family: 'Roboto Condensed', Arial, sans-serif;
     position: relative;
-    height: 300px;
-    width: 220px;
+    height: 330px;
+    width: 230px;
     margin-top: 25px !important;
 
     display: inline-block;
@@ -102,16 +102,19 @@ body{
     background-color: rgba(0, 0, 0, 0);
   }
   .card .front .title h2 {
-    color: rgb(255, 172, 78);
+    color: rgb(0, 0, 0);
     margin: 0;
     padding: 0px;
-    font-weight: 600;
-    font-size: 25px;
+    font-weight: 800;
+    font-size: 30px;
+    -webkit-text-stroke: 1px rgb(255, 123, 0);
   }
+  
   .card .back {
     background: #333;
     transform: rotateY(-180deg);
     padding: 20px;
+    font-size: 18px;
   }
   .card .back p {
     margin: 0 0 20px 0;
@@ -140,9 +143,28 @@ body{
     
   }
   .card:hover .back {
-    transform: rotateY(0);
-    
+    transform: rotateY(0); 
   }
+
+  #box_lista{
+    color: rgb(32, 32, 32);
+    background-color: rgba(255, 144, 16, 0.87);
+    border: solid;
+    border-radius: 30px;
+    border-color: rgb(146, 88, 0);
+    transition: 0.4s;
+  }
+
+  #box_lista:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(32, 32, 32, 0.87);
+    border-color: rgb(146, 88, 0);
+    transition: 0.4s;
+    
+   
+  }
+  
+
 
 
 

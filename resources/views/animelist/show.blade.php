@@ -1,56 +1,53 @@
 @extends('layouts.master')
 
 @section('content')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="<?php echo asset('css/animecards.css')?>" type="text/css">
 
-    <div class="row">
+<link rel="stylesheet" href="<?php echo asset('css/show.css')?>" type="text/css">
+<div class="container"> 
+    <div class="row justify-content-around mt-4 mb-4 " id="box_anime">
 
-        <div class="col-sm-4">
-
-            <a href="{{ url('/animelist/show/' . $anime->id ) }}">
-                <img src="{{$anime->poster}}" style="height:220px"/>
-            </a>
-            
-            
-
+    
+        <div class="col-0 col-sm-10 col-md-4 col-lg-4 align-self-center mt-4 mb-4">
+            <img src="{{$anime->poster}}"/>
+           
         </div>
-        <div class="col-sm-8">
-
-            <h4>{{$anime->title}}</h4>
-            <h6>A&ntilde;o: {{$anime->year}}</h6>
-            <h6>Director: {{$anime->director}}</h6>
-            <p><strong>Resumen:</strong> {{$anime->synopsis}}</p>
-
-            
-            
-
-
-            
-            <a class="btn btn-outline-info" href="{{ action('AnimelistController@getIndex') }}">Volver al listado</a>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-8 align-self-center  mb-4 " > 
+        <h2> <strong>{{$anime->title}}</strong> </h2>
+            <h5 class="mt-4">Año: {{$anime->year}}</h5>
+            <h5>Director: {{$anime->director}}</h5>
+            <h5>Nota: {{$anime->nota}}</h5>
+            <p><strong><h5>Resumen:</h5></strong> {{$anime->synopsis}}</p>
+            <a class="btn btn-outline-info" id="btn" href="{{ action('AnimelistController@getIndex') }}">Volver al listado</a>
             @if(Auth::user()->is_admin == true)
-            <a class="btn btn-warning" href="{{ url('/animelist/edit/' . $anime->id ) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Editar An&iacute;me</a>
-             <a class="nav-link" href="{{url('/animelist/createep/' . $anime->id)}}"> Nuevo Episodio</a>
-             @endif
-
-
-            
-            @foreach( $Episodios as $Episodio )
-                <p>
-                <a class="btn btn-outline-info" href="{{ url('/animelist/viewep/' . $Episodio->id )}}">{{$Episodio->title}}</a> 
-                 @if(Auth::user()->is_admin == true)
-                <a class="btn" href="{{ url('/animelist/editep/' . $Episodio->id ) }}">Mod-EP </a> 
-                <a href="/animelist/deleteep/{{$Episodio->id}}">Delete</a>
-                @endif
-                
-
-
-                </p>
-            @endforeach 
-            
-
+            <a class="btn btn-outline-info" id="btn" href="{{ url('/animelist/edit/' . $anime->id ) }}">Editar Anime</a>
+            <a class="btn btn-outline-info" id="btn" href="{{url('/animelist/createep/' . $anime->id)}}"> Nuevo Episodio</a>
+            @endif
         </div>
     </div>
+</div>
+
+
+<div class="container mt-1 mb-1"> 
+    <div class="row justify-content-around" id="box_episodio" >
+    @foreach( $Episodios as $Episodio )
+    <div class="col-0 col-sm-10 col-md-4 col-lg-4 align-self-center mt-3">
+    @if(Auth::user()->is_admin == true)
+        <a class="btn btn-outline-info" id="btn" href="{{ url('/animelist/editep/' . $Episodio->id ) }}">Modificar Ep </a> 
+        <a class="btn btn-outline-info" id="btn" href="/animelist/deleteep/{{$Episodio->id}}">Delete</a>
+        @endif
+      
+    </div>
+       
+       <div class="col-12 col-sm-12 col-md-6 col-lg-8 align-self-center mt-3 " >
+       <a class="btn btn-outline-info" id="btn" href="{{ url('/animelist/viewep/' . $Episodio->id )}}">{{$Episodio->title}}</a>      
+        
+        </div>
+    
+   
+      @endforeach
+      </div>
+</div>
+
 
 
 @stop

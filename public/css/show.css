@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Acme&display=swap);
+
+
+
+body{
+    background-color: rgb(31, 31, 31) !important;
+    font-family: 'Acme', sans-serif;
+}
+#box_anime{
+    background-color:  rgb(32, 32, 32) !important;
+    border: solid;
+    border-radius: 20px;
+    color: rgb(255, 136, 0);
+    border-color:  rgb(19, 19, 19);
+    overflow: hidden;
+    transition: 1s;
+}
+#box_episodio{
+    background-color: rgb(32, 32, 32) !important;
+    border:solid;
+    border-color:  rgb(20, 20, 20);
+    border-radius: 20px;
+    transition: 1s;
+    
+}
+
+#btn{
+    padding: 15px;
+    border-radius: 10px;
+    background:rgb(31, 31, 31) ;
+    border-color: rgb(29, 29, 29) ;
+    color: #cccccc;
+    background:rgb(12, 12, 12) ;
+    margin-right: 9px;
+    font-size: 20px;
+  }
+  
+  #btn:hover{
+    border-color: rgb(202, 202, 202) ;
+    color: rgb(255, 162, 100)
+   
+
+  }
+
+  #box_anime:hover{
+    background-color:  rgb(32, 32, 32) !important;
+    border: solid;
+    border-color: rgba(187, 128, 0, 0.658);
+    overflow: hidden;
+    transition: 1s;
+}
+#box_episodio:hover{
+    background-color: rgb(32, 32, 32) !important;
+    border-color: rgba(187, 128, 0, 0.658);
+    transition: 1s;
+}
+
+  img{
+      border-radius: 10px;
+      transition: transform .4s;
+  }
+  img:hover{
+    transform: scale(1.1);
+    transition: transform .4s;
+}

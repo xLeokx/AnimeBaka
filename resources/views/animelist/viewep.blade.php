@@ -1,33 +1,60 @@
 @extends('layouts.master')
 
 @section('content')
+<link rel="stylesheet" href="<?php echo asset('css/viewep.css')?>" type="text/css">
+<div class="container mt-4">
+    <div class="row justify-content-around pt-3 pb-3" id="box_episodio" >
+        <div class="col-9 col-sm-9 col-md-9 col-lg-9 align-self-center ">
+                <div class="text-center mt-4 mb-4"><h4>{{$Episodio->title}}</h4></div>
+           
+            <div class="text-center"><video width="100%" height="100%" controls src="{{$Episodio->ruta}}" type="video/mp4"></video></div>
+            
 
-<div class="row">
-        <div class="col-xs-6  text-center">
-                <h4>{{$Episodio->title}}</h4>
+
+
+
+
+            <div class="container">
+                <div class="row justify-content-around mt-3 mb-3" >
+
+
+
+                    <div class="col-4">
+                        @if($Previous=='1')
+                        @else
+                        <div class="text-left"><a class="btn btn-outline-info" id="btn"
+                            href="{{ url('/animelist/viewep/' . $Previous->id ) }}">After</a></div>
+                        @endif
+                    </div>
+
+
+                    <div class="col-4">
+                            <div class="text-center" >   <a class="btn btn-outline-info" id="btn" href="{{ url('/animelist/show/' . $Anime) }}">Pagina del
+                            Anime</a></div>
+                      
+                    </div>
+
+
+                    <div class="col-4">
+                        @if($Next=='1')
+                        @else
+                        <div class="text-right" >   <a class="btn btn-outline-info "  id="btn" href="{{ url('/animelist/viewep/' . $Next->id  )}}">Next</a></div>
+                        
+                        @endif
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
         </div>
-</div>
-          
-
-
-<video width="720" height="420" controls src="{{$Episodio->ruta}}"type="video/mp4"></video>
-
-
-<div class="row">
-
-
-        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
-        @if($Previous=='1')
-        @else
-        <a class="btn btn-outline-info" href="{{ url('/animelist/viewep/' . $Previous->id ) }}">After</a>  
-        @endif
-        @if($Next=='1')
-        @else
-        <a class="btn btn-outline-info" href="{{ url('/animelist/viewep/' . $Next->id  )}}">Next</a>
-        @endif
-
-        </div>
-        <a class="btn btn-outline-info" href="{{ url('/animelist/show/' . $Anime) }}">Pagina del Anime</a>  
+    </div>
 </div>
             
 @stop

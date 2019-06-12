@@ -5,7 +5,7 @@
 
 
 <link rel="stylesheet" href="<?php echo asset('css/login.css')?>" type="text/css">
-<div class="container">
+<div class="container-fluid">
 
         <!--row1 -->
 
@@ -13,15 +13,16 @@
 
         <form method="POST" action="{{ route('login') }}">
         @csrf
-            <div class="colcol-4"></div>
 
 
-            <div class="colcol-4">
+
+            <div class="col-12">
 
                 <!--  ---------------------------------------------LOGIN // SING IN----------------------------------- -->
                 <div class="login-formulario">
+                    <div class="contenedor"><img  id="logologin" src="<?php echo asset('media/logo.png')?>" alt="" class="img-fluid"></div>
 
-                    <h1>AnimeBaka</h1>
+                   
 
                     <!--SING IN -->
                     <div class="user_box">
@@ -45,8 +46,8 @@
                             </span>
                             @endif
                     </div>
-
-                    <a class="link mt-4" href="{{ route('password.request') }}">Olvidaste tu contraseña?</a>
+                    <!--{{ route('password.request') }} -->
+                    <a class="link mt-4" href="">Olvidaste tu contraseña?</a>
                     <span class=" mb-2" id="alert">Error, nombre o contraseña Incorrecto</span>
 
                     <button type="submit" id="log-btn" class="btn btn-primary btn-lg btn-block">Iniciar Sesion</button>
@@ -55,10 +56,10 @@
 
                 </div>
             </div>
-            <div class="colcol-4"></div>
+       
            
         </div>
     </div>
-    <div class="img1"><img src="<?php echo asset('media/back.png')?>" alt="" class="img-fluid p2"></div>
+    <div class="img1"><img id="imagen-inicial" src="<?php echo asset('media/back.png')?>" alt="" class="img-fluid p2"></div>
 
     @endsection

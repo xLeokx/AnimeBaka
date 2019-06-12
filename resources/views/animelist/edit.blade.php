@@ -2,62 +2,62 @@
 
 @section('content')
 
-    <div class="row" style="margin-top:40px">
-        <div class="offset-md-3 col-md-6">
-            <div class="card">
-                <div class="card-header text-center">
-                    Modificar Anime
-                </div>
-                <div class="card-body" style="padding:30px">
+<link rel="stylesheet" href="<?php echo asset('css/login.css')?>" type="text/css">
 
-                    <form action="{{ url('animelist/edit/' . $anime->id) }}" method="POST">
+  
+    <div class="container-fluid">
 
-                        {{method_field('PUT')}}
+        <!--row1 -->
 
-                        @csrf
+        <div class="row justify-content-center">
 
-                        <div class="form-group">
-                            <label for="title">Título</label>
-                            <input type="text" name="title" value="{{ $anime->title }}" id="title" class="form-control">
-                        </div>
+        <form   action="{{ url('animelist/edit/' . $anime->id) }}" method="POST">
+        {{method_field('PUT')}}
+        @csrf
+            <div class="col-3">
+                <!--  ---------------------------------------------LOGIN // SING IN----------------------------------- -->
+                <div class="login-formulario" id="formulario_box" >
 
-                        <div class="form-group">
-                            <input type="number" min="1900" max="2030" name="year" value="{{ $anime->year }}" placeholder="A&ntilde;o">
-                        </div>
-                        <div class="form-group">
-                            <label for="title">genero</label>
-                            <input type="text" name="genero" value="{{ $anime->genero }}" id="genero" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="title">nota</label>
-                            <input type="text" name="nota" value="{{ $anime->nota }}" id="nota" class="form-control">
-                        </div>
+                    <h1>Modificar el anime: {{ $anime->title }}</h1>
 
-                        <div class="form-group">
-                            <input type="text" name="director" value="{{ $anime->director }}" placeholder="Director">
-                        </div>
+                    <!--SING IN -->
+                    <div class="user_box">
+                        <input type="text" class="form-control" value="{{ $anime->title }}" name="title"  placeholder="Titulo" id="UserName">
+                    </div>
+                   
+                    <div class="password_box" id="icono_pass">
+                        <input type="number" class="form-control" value="{{ $anime->year }}" name="year"  placeholder="Año" id="Password">
+                    </div>
 
-                        <div class="form-group">
-                            <input type="url" name="poster" value="{{ $anime->poster }}" placeholder="url del poster">
-                        </div>
+                    <div class="password_box" id="icono_pass">
+                        <input type="text" class="form-control" value="{{ $anime->director }}" name="director"  placeholder="Director" id="Password">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="synopsis">Resumen</label>
-                            <textarea name="synopsis" id="synopsis" class="form-control" rows="3">{{ $anime->synopsis }}"</textarea>
-                        </div>
+                    <div class="password_box" id="icono_pass">
+                        <input type="text" class="form-control" value="{{ $anime->nota }}" name="nota"  placeholder="Nota" id="Password">
+                    </div>
 
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary" style="padding:8px 100px;margin-top:25px;">
-                                Modificar anime
-                            </button>
-                        </div>
+                    <div class="password_box" id="icono_pass">
+                        <input type="text" class="form-control" value="{{ $anime->genero }}" name="genero"  placeholder="Genero" id="Password">
+                    </div>
 
-                    </form>
+                    <div class="password_box" id="icono_pass">
+                        <input type="url" class="form-control" value="{{ $anime->poster }}" name="poster"  placeholder="URL - Poster" id="Password">
+                    </div>
 
+                    <div class="password_box" id="icono_pass">
+                        <textarea type="text" class="form-control" value="{{ $anime->synopsis }}" name="synopsis" rows="3" placeholder="Synopsis" id="Password"></textarea>
+                    </div>
+                   
+                    
+
+                    <button type="submit" id="log-btn" class="btn btn-primary btn-lg btn-block mt-4">Añadir</button>
                 </div>
             </div>
         </div>
-    </div>
+            
+        
+    <div class="img1"><img src="<?php echo asset('media/back.png')?>" alt="" class="img-fluid p2"></div>
 
 
 @stop

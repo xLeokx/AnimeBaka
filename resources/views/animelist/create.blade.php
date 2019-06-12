@@ -2,61 +2,68 @@
 
 @section('content')
 
-    <div class="row" style="margin-top:40px">
-        <div class="offset-md-3 col-md-6">
-            <div class="card">
-                <div class="card-header text-center">
-                    Añadir Anime
-                </div>
-                <div class="card-body" style="padding:30px">
-
-                    <form action="{{ url('animelist/create') }}" method="POST">
-
-                        @csrf
-
-                        <div class="form-group">
-                            <label for="title">Título</label>
-                            <input type="text" name="title" id="title" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="number" min="1900" max="2030" name="year" placeholder="A&ntilde;o">
-                        </div>
+<link rel="stylesheet" href="<?php echo asset('css/login.css')?>" type="text/css">
 
 
-                        <div class="form-group">
-                            <input type="text" name="director" placeholder="Director">
-                        </div>
+    <div class="container">
 
-                        <div class="form-group">
-                            <input type="text" name="nota" placeholder="Nota">
-                        </div>       
+        <!--row1 -->
 
-                        <div class="form-group">
-                            <input type="text" name="genero" placeholder="Genero">
-                        </div>
+        <div class="row justify-content-center">
 
-                        <div class="form-group">
-                            <input type="url" name="poster" placeholder="url del poster">
-                        </div>
+        <form  action="{{ url('animelist/create') }}" method="POST">
+        @csrf
+            <div class="col-4"></div>
 
-                        <div class="form-group">
-                            <label for="synopsis">Resumen</label>
-                            <textarea name="synopsis" id="synopsis" class="form-control" rows="3"></textarea>
-                        </div>
 
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary" style="padding:8px 100px;margin-top:25px;">
-                                Añadir Anime
-                            </button>
-                        </div>
+            <div class="col-4">
 
-                    </form>
+                <!--  ---------------------------------------------LOGIN // SING IN----------------------------------- -->
+                <div class="login-formulario">
+
+                    <h1>Nuevo Anime</h1>
+
+                    <!--SING IN -->
+                    <div class="user_box">
+                        <input type="text" class="form-control" name="title"  placeholder="Titulo" id="UserName">
+                    </div>
+                   
+                    <div class="password_box" id="icono_pass">
+                        <input type="number" class="form-control" name="year"  placeholder="Año" id="Password">
+                    </div>
+
+                    <div class="password_box" id="icono_pass">
+                        <input type="text" class="form-control" name="director"  placeholder="Director" id="Password">
+                    </div>
+
+                    <div class="password_box" id="icono_pass">
+                        <input type="text" class="form-control" name="nota"  placeholder="Nota" id="Password">
+                    </div>
+
+                    <div class="password_box" id="icono_pass">
+                        <input type="text" class="form-control" name="genero"  placeholder="Genero" id="Password">
+                    </div>
+
+                    <div class="password_box" id="icono_pass">
+                        <input type="url" class="form-control" name="poster"  placeholder="URL - Poster" id="Password">
+                    </div>
+
+                    <div class="password_box" id="icono_pass">
+                        <textarea type="text" class="form-control" name="synopsis" rows="3" placeholder="Synopsis" id="Password"></textarea>
+                    </div>
+                   
+                    
+
+                    <button type="submit" id="log-btn" class="btn btn-primary btn-lg btn-block mt-4">Añadir</button>
+                    
 
                 </div>
             </div>
+            <div class="col-4"></div>
+           
         </div>
     </div>
+    <div class="img1"><img src="<?php echo asset('media/back.png')?>" alt="" class="img-fluid p2"></div>
 
 
 @stop

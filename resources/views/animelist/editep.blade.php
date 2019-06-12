@@ -2,40 +2,35 @@
 
 @section('content')
 
-    <div class="row" style="margin-top:40px">
-        <div class="offset-md-3 col-md-6">
-            <div class="card">
-                <div class="card-header text-center">
-                    Modificar Episodio
-                </div>
-                <div class="card-body" style="padding:30px">
+    <link rel="stylesheet" href="<?php echo asset('css/login.css')?>" type="text/css">
+    <div class="container">
 
-                    <form action="{{ url('animelist/editep/' . $Episodio->id) }}" method="POST">
+        <!--row1 -->
+        <div class="row justify-content-center">
+        <form  action="{{ url('animelist/editep/' . $Episodio->id) }}" method="POST">
+        {{method_field('PUT')}}
+        @csrf
+            <div class="colcol-4"></div>
+            <div class="colcol-4">
+                <!--  ---------------------------------------------LOGIN // SING IN----------------------------------- -->
+                <div class="login-formulario">
 
-                        {{method_field('PUT')}}
+                    <h1>Modificando Episodio</h1>
+                    <!--SING IN -->
+                    <div class="user_box">
+                        <input type="text" class="form-control" value="{{ $Episodio->title }}" name="title"  placeholder="Titulo" id="UserName">
+                    </div>
+                    <div class="password_box" id="icono_pass">
+                        <input type="text" class="form-control" value="{{ $Episodio->ruta }}" name="ruta"  placeholder="Ruta" id="Password">
+                    </div>
 
-                        @csrf
-
-                        <div class="form-group">
-                            <label for="title">Título</label>
-                            <input type="text" name="title" value="{{ $Episodio->title }}" id="title" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text"  name="ruta" value="{{ $Episodio->ruta }}">
-                        </div>
-                        
-
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary" style="padding:8px 100px;margin-top:25px;">
-                                Modificar Episodio
-                            </button>
-                        </div>
-
-                    </form>
-
+                    <button type="submit" id="log-btn" class="btn btn-primary btn-lg btn-block mt-4">Cambiar</button>
                 </div>
             </div>
+            <div class="colcol-4"></div>
+           
         </div>
     </div>
+    <div class="img1"><img src="<?php echo asset('media/back.png')?>" alt="" class="img-fluid p2"></div>
+
 @stop
