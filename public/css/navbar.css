@@ -1,0 +1,100 @@
+.navbar{
+   
+    
+  }
+
+#nav_color{
+    background-color: #383838;
+    border: solid;
+    border-top-color:#e68b03;
+    border-right: none;
+    border-left: none;
+    border-bottom-color:#e68b03;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+}
+#search_box{
+    position: absolute;
+    left: 35%;
+    background-color: #e68b03;
+    height: 55px;
+    border-radius: 30px;
+    border: solid;
+    border-color: #9e5f01;  
+    
+}
+#search_input{
+   
+    padding: 10px;
+    width: 0px;
+    border: none; 
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    line-height: 35px ;
+    transition: 0.9s ;
+}
+#search_btn{
+   
+    padding: 10px;
+    border-radius: 50%;
+    color: #383838;
+    background: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin-right: 9px;
+}
+
+
+
+#logo_nav{
+    color: #ffab2c;
+    margin-left: 30px;
+    transition: 0.9s ;
+}
+#nav_inicio{
+    color: #ffab2c;
+    margin-left: 30px;
+    font-size: 20px;
+    transition: 0.3s ;
+      
+}
+#search_box :hover > #search_input {
+    width: 280px;
+    margin-left: 20px;
+    transition: 0.9s;
+}
+#search_box :hover > #search_btn {
+    background-color:#383838;
+    color: #e68b03;
+    transition: 0.9s ;
+    
+    
+}
+#logo_nav :hover{
+    color:  #b46c00;
+    transition: 0.3s ;
+}
+#nav_color :hover{
+    border-color: #b46c00;
+    transition: 0.3s ;
+}
+#nav_inicio :hover{
+    color:  #b46c00;
+    transition: 0.3s ;
+}
+.active{
+    border: 1px solid;
+    border-color: #ffab2c;
+    transition: 0.3s ;
+}
+
+
+
+
+

@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Vibur);
+body{
+  background-color: rgb(31, 31, 31) !important;
+  height: 100vh;
+  overflow: hidden;
+}
+h1{
+  color:rgb(48, 48, 48);
+  text-align:center;
+  font-family: 'Vibur', cursive;
+  font-size: 50px;
+  transition: 1s;
+}
+h1:hover{
+    color:rgb(0, 0, 0);
+  }
+
+.login-formulario{
+margin-top: 50%;
+width:350px;
+padding:40px 30px;
+border-radius: 12px;
+background-color: #e68b03;
+border-radius: 40px;
+border: solid;
+border-color: #9e5f01;  
+}
+#UserName{
+  padding: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: black;
+  background: none;
+  outline: none;
+  padding: 0;
+  color: white;
+  font-size: 18px;
+  transition: 0.9s ;
+
+}
+#Password{
+
+  padding: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: black;
+  background: none;
+  outline: none;
+  padding: 0;
+  color: white;
+  font-size: 18px;
+  transition: 0.9s ;
+}
+.password_box{
+  margin-top: 20px;
+}
+
+#log-btn{
+  padding: 10px;
+  border-radius: 40px;
+  color: #e68b03;
+  background:rgb(31, 31, 31) ;
+  border: solid;
+  border-color: rgb(15, 15, 15) ;;
+  margin-right: 9px;
+  margin-top: 10px;
+}
+.link{
+  text-decoration:none;
+  color:rgb(31, 31, 31) ;
+  float:right;
+  font-size:14px;
+  margin-bottom:15px;
+  transition: 0.5s;
+}
+.link:hover{
+text-decoration: underline;
+color:rgb(17, 17, 17) ;
+font-size:14px;
+transition: 0.5s;
+
+}
+#alert{
+  position: absolute;
+  display:none;
+  font-size:12px;
+  color:#f00;
+  float:left;
+}
+#log-btn:hover{
+  color: #ac6700;
+  background:rgb(19, 19, 19) ;
+ 
+}
+#UserName:focus{
+  box-shadow: none;
+  border-bottom: 2px solid;
+}
+#Password:focus{
+  box-shadow: none;
+  border-bottom: 2px solid;
+
+}
+img{
+  
+  width: auto !important;
+  max-width: 1900px;
+
+}
+.img1{
+  position: absolute;
+  left: 1250px;
+  top: 150px;
+}

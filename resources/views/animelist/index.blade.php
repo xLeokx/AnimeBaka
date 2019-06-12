@@ -1,54 +1,93 @@
 @extends('layouts.master')
 
 @section('content')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="<?php echo asset('css/animecards.css')?>" type="text/css">
+<link rel="stylesheet" href="<?php echo asset('css/index.css')?>" type="text/css">
 
 
-<P> <h4>Lista de Animes</h4></P>
-                       
+<button id="mybtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+</button>
 
-<div class="row">
-        @foreach( $arrayAnimes as $anime )
-            <div class="col-xs-6 col-sm-4 col-md-3 text-center">
-                <a href="{{ url('/animelist/show/' . $anime->id ) }}">
-                    <img src="{{$anime->poster}}" style="height:200px"/>
-                    <h4 style="min-height:45px;margin:5px 0 10px 0">
-                        {{$anime->title}}
-                    </h4>
-                </a>
-                <a  href="{{ url('/animelist/' . $anime->id  .'/'. $anime->title ) }}"> <i class="glyphicon glyphicon-star" style="color:black"> </i></a> 
+<div class="container-fluid " id="entrada" style="background-image: url('<?php echo asset('media/banner.jpg')?>">
+        </div>
+
+
+
+    <br>
+    <br>
+    <br>
+   
+    <div class="container-fluid mt-3">
+            <div class="row justify-content-around">
+                    <div class="col-12 col-sm-10 col-md-8 col-lg-6 align-self-center mt-1 mb-1" >
+                            <h1>Lista de AnimeBaka</h1>
+                    </div>  
             </div>
-        @endforeach
     </div>
-    
+
+
+    <div class="container mt-3" id="nosotros">
+        <div class="row justify-content-around">
+        @foreach( $arrayAnimes as $anime )
+            <div class="col-12 col-sm-5 col-md-5 col-lg-3 align-self-center mt-4 mb-1" id="inicio">
+                <div class="card">
+                    <div class="front" style="background-image: url('{{$anime->poster}}')">
+                        <div class="title">
+                            <h2>{{$anime->title}}</h2>
+                           
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>historia pequeña.</p> 
+                        
+                        <a  href="{{ url('/animelist/' . $anime->id  .'/'. $anime->title ) }}">fav</a> 
+                        <a class="btn" href="{{ url('/animelist/show/' .$anime->id) }}">Ver Anime</a> 
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        @endforeach  
+        </div>
+    </div>
+
     <div>{{ $arrayAnimes->onEachSide(1)->links() }}</div>
     
-
-
     @if( $arrayAnimesFavoritos->first()== null)
 
     @else 
-    <p><h4>Lista de Favoritos</h4></p> 
+    <div class="container-fluid mt-3">
+            <div class="row justify-content-around">
+                    <div class="col-12 col-sm-10 col-md-8 col-lg-6 align-self-center mt-1 mb-1" >
+                            <h1>Lista de Favoritos</h1>
+                    </div>  
+            </div>
+    </div>
     @endif
 
-    <div class="row">
+
+    <div class="container mt-3" id="nosotros">
+        <div class="row justify-content-around">
         @foreach( $arrayAnimesFavoritos as $misfav )
-            <div class="col-xs-6 col-sm-4 col-md-3 text-center">
-
-                <a href="{{ url('/animelist/show/' . $misfav->id) }}">
-                    <img src="{{$misfav->poster}}" style="height:200px"/>
-                    <h4 style="min-height:45px;margin:5px 0 10px 0">
-                        {{$misfav->title}}
-                               
-                    </h4>
-                </a> 
-            
-                <a href="{{ url('/animelist/' . $misfav->id .'/'. $misfav->title) }}"> <i class="glyphicon glyphicon-star" style="color:yellow"></i></a>
-
+            <div class="col-12 col-sm-10 col-md-5 col-lg-3 align-self-center mt-4 mb-1" id="inicio">
+                <div class="card">
+                    <div class="front" style="background-image: url('{{$misfav->poster}}')">
+                        <div class="title">
+                            <h2>{{$misfav->title}}</h2>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>historia pequeña.</p>
+                        <a class="btn" href="{{ url('/animelist/show/' . $misfav->id) }}">Ver Anime</a> 
+                        <a href="{{ url('/animelist/' . $misfav->id .'/'. $misfav->title) }}"> <i class="glyphicon glyphicon-star" style="color:yellow">asd</i></a>
+                    </div>
+                </div>
             </div>
-        @endforeach
+        @endforeach  
+        </div>
     </div>
+
+    
 
 
     

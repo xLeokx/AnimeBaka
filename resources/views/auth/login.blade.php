@@ -1,73 +1,64 @@
 @extends('layouts.master')
 
 @section('content')
+
+
+
+<link rel="stylesheet" href="<?php echo asset('css/login.css')?>" type="text/css">
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+        <!--row1 -->
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+        <div class="row justify-content-center">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+        <form method="POST" action="{{ route('login') }}">
+        @csrf
+            <div class="colcol-4"></div>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+            <div class="colcol-4">
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                <!--  ---------------------------------------------LOGIN // SING IN----------------------------------- -->
+                <div class="login-formulario">
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                    <h1>AnimeBaka</h1>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <!--SING IN -->
+                    <div class="user_box">
+                        <i class="fas fa-users" id="icono_user"></i>
+                        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="E-mail Adress " id="UserName">
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                            @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                            @endif
+                    </div>
+                   
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+                    <div class="password_box" id="icono_pass">
+                        <i class="fas fa-lock"></i><input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Password"id="Password">
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                            @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                            @endif
+                    </div>
+
+                    <a class="link mt-4" href="{{ route('password.request') }}">Olvidaste tu contraseña?</a>
+                    <span class=" mb-2" id="alert">Error, nombre o contraseña Incorrecto</span>
+
+                    <button type="submit" id="log-btn" class="btn btn-primary btn-lg btn-block">Iniciar Sesion</button>
+                    
+                    <a type="button" id="log-btn" class="btn btn-primary btn-lg btn-block" href="/register">Crear cuenta</a></form>
+
                 </div>
             </div>
+            <div class="colcol-4"></div>
+           
         </div>
     </div>
-</div>
-@endsection
+    <div class="img1"><img src="<?php echo asset('media/back.png')?>" alt="" class="img-fluid p2"></div>
+
+    @endsection

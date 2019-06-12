@@ -1,47 +1,42 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="/" style="color:#777"><span style="font-size:15pt">&#9820;</span> AnimeBaka</a>
+@if( Auth::check() )
+<link rel="stylesheet" href="<?php echo asset('css/navbar.css')?>" type="text/css">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-md sticky-top" id="nav_color">
+    
+    <a class="navbar-brand" id="logo_nav" href="#"><i class="fab fa-drupal fa-2x"></i></a>
 
-        @if( Auth::check() )
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item {{ Request::is('animelist') && ! Request::is('animelist/create')? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/animelist')}}">
-                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                            Inicio
-                        </a>
-                    </li>
-                    @if(Auth::user()->is_admin == true)
-                    <li class="nav-item {{  Request::is('animelist/create') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/animelist/create')}}">
-                            <span>&#10010</span> Nuevo Anime
-                        </a>
-                    </li>
-                    
-             
-             @endif
-             <form class="form-inline" action="{{url('animelist/search')}}" method="get">
-                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-                    
-                </ul>
-
-                <ul class="navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <form action="{{ url('/logout') }}" method="POST" style="display:inline">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">
-                                Cerrar sesión
-                            </button>
-                        </form>
-                    </li>
-                </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        
+       
+        
+            <div class="navbar-nav " id="nav_inicio">
+                <a class="nav-item nav-link" href="{{url('/animelist')}}" > <span>Inicio</span></a>
+                @if(Auth::user()->is_admin == true)
+                <a class="nav-item nav-link ml-4 {{  Request::is('animelist/create') ? 'active' : ''}}"  href="{{url('/animelist/create')}}"> <span>Añadir anime</span></a>
+                @endif
             </div>
-        @endif
-    </div>
-</nav>
+
+            <div class="navbar-nav navbar-right " id="nav_inicio">
+                <form class="form-inline"  action="{{ url('/logout') }}" method="POST" >
+                    {{ csrf_field() }}
+                    <button class="btn btn-outline mr-4" type="submit"> <span>Cerrar Sesion</span></button>
+                </form>
+            </div>
+
+            <div class="navbar-nav" id="search_box">
+                <form class="form-inline" action="{{url('animelist/search')}}" method="get">
+                    <input class=" mr-sm-2" id="search_input" type="search" name="search" placeholder="Busca tu anime"
+                        aria-label="Search">
+                    <button class="btn btn-outline my-2 my-sm-0" id="search_btn" type="submit"><i
+                            class="fas fa-search fa-lg"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    @endif
+   
