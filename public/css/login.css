@@ -4,14 +4,21 @@
 
 
 body{
-  background-color: rgb(31, 31, 31) !important;
-  height: 100vh;
+  background-color: rgb(19, 19, 19)!important;
   
+  background: cover;
+  height: 100vh;
   font-family: 'Acme', sans-serif;
-  overflow: hidden;
+  background-image: url("/media/background.jpg") ;
+  background-size: 105% 105%;
+  left: 1000px;
+ 
+
+  
+
 }
 h1{
-  color:rgb(48, 48, 48);
+  color:rgb(31, 31, 31);
   text-align:center;
   font-size: 50px;
   transition: 1s;
@@ -27,7 +34,7 @@ border-radius: 12px;
 background-color: #e68b03;
 border-radius: 40px;
 border: solid;
-border-color: #9e5f01;
+border-color: rgb(241, 90, 34);
  
 }
 #UserName{
@@ -35,11 +42,11 @@ border-color: #9e5f01;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: black;
+  border-bottom-color: rgb(19, 19, 19);
   background: none;
   outline: none;
   padding: 0;
-  color: white;
+  color: rgb(240, 240, 240);
   font-size: 18px;
   transition: 0.9s ;
 
@@ -50,11 +57,11 @@ border-color: #9e5f01;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: black;
+  border-bottom-color: rgb(19, 19, 19);
   background: none;
   outline: none;
   padding: 0;
-  color: white;
+  color: rgb(240, 240, 240);
   font-size: 18px;
   transition: 0.9s ;
 }
@@ -81,7 +88,7 @@ border-color: #9e5f01;
 }
 .link:hover{
 text-decoration: underline;
-color:rgb(17, 17, 17) ;
+color:rgb(19, 19, 19) ;
 font-size:14px;
 transition: 0.5s;
 
@@ -94,7 +101,7 @@ transition: 0.5s;
   float:left;
 }
 #log-btn:hover{
-  color: #ac6700;
+  color: rgb(228, 120, 51);
   background:rgb(19, 19, 19) ;
  
 }
@@ -108,15 +115,20 @@ transition: 0.5s;
 
 }
 
-.img1{
-  position: absolute;
-  left: 55%;
-  top: 25vh;
-  z-index: -1;
+#foo{
+  position: fixed;
+  bottom: 0;
+  left: calc((100% - 100px) / 2);
+  
+    
+  
+
 }
+
+
 .contenedor{
  
-  height: 300px;
+ 
   width: 100%;
   overflow: hidden;
 
@@ -126,6 +138,11 @@ transition: 0.5s;
   .img1 img{ 
     display: none;
   }
+  body{
+    background-image: none;
+
+  }
    
   
 }
+

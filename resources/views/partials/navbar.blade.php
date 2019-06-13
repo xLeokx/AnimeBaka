@@ -25,18 +25,18 @@
                 <a id="items" class="nav-item nav-link  {{  Request::is('animelist/create') ? 'active' : ''}}"
                     href="{{url('/animelist/create')}}"> <span class="mr-3 ml-3">Añadir anime</span><i class="fas fa-plus"></i></a>
                 @endif
-                <a id="items" class="nav-item nav-link" href="#misfav"> <span class="mr-3 ml-3">MisFav</span><i class="far fa-star"></i></a>
+                <a id="items" class="nav-item nav-link" href="#misfav"> <span class="mr-3 ml-3">Fav</span><i class="far fa-star"></i></a>
             </div>
            
             <div class="navbar-nav ml-auto  " id="nav_inicio">
                 <form class="form-inline" action="{{ url('/logout') }}" method="POST">
                     {{ csrf_field() }}
-                    <a id="items"><button class="btn btn-outline" id="cerrarsesion" type="submit"> <span class="mr-3">Cerrar Sesion</span><i class="fas fa-times"></i></button></a>
+                    <a id="items"><button class="btn btn-outline" id="cerrarsesion" type="submit"> <span class="mr-3">Cerrar Sesión</span><i class="fas fa-times"></i></button></a>
                     
                 </form>
             </div>
             <div class="navbar-nav   " id="nav_inicio">
-               <span id="miname" class="ml-3"> {{Auth::user()->name}}</span>
+               <span id="miname" class="ml-3"> {{Auth::user()->name}} <i class="fas fa-user"></i></span>
             </div>
             <div class="navbar-nav" id="search_box">
                 <form class="form-inline" action="{{url('animelist/search')}}" method="get">

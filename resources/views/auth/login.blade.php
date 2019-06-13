@@ -4,8 +4,9 @@
 
 
 
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <link rel="stylesheet" href="<?php echo asset('css/login.css')?>" type="text/css">
+<script  src="<?php echo asset('js/move.js')?>"></script>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -61,6 +62,5 @@
         </div>
     </div>
 </div>
-<div class="img1"><img id="imagen-inicial" src="<?php echo asset('media/back.png')?>" alt="" class="img-fluid p2">
-</div>
+ 
 @endsection

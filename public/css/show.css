@@ -5,12 +5,13 @@
 body{
     background-color: rgb(31, 31, 31) !important;
     font-family: 'Acme', sans-serif;
+
 }
 #box_anime{
     background-color:  rgb(32, 32, 32) !important;
     border: solid;
     border-radius: 20px;
-    color: rgb(255, 136, 0);
+    color: rgb(228, 120, 51);
     border-color:  rgb(19, 19, 19);
     overflow: hidden;
     transition: 1s;
@@ -27,31 +28,31 @@ body{
 #btn{
     padding: 15px;
     border-radius: 10px;
-    background:rgb(31, 31, 31) ;
-    border-color: rgb(29, 29, 29) ;
-    color: #cccccc;
+    background:rgb(61, 61, 61);
+    border-color: rgb(31, 31, 31);
+    color: rgb(240, 240, 240);
     background:rgb(12, 12, 12) ;
     margin-right: 9px;
     font-size: 20px;
   }
   
   #btn:hover{
-    border-color: rgb(202, 202, 202) ;
-    color: rgb(255, 162, 100)
+    border-color: rgb(240, 240, 240);
+    color: rgb(241, 90, 34);
    
 
   }
 
   #box_anime:hover{
-    background-color:  rgb(32, 32, 32) !important;
+    background-color:  rgb(19, 19, 19) !important;
     border: solid;
-    border-color: rgba(187, 128, 0, 0.658);
+    border-color: rgb(241, 90, 34);
     overflow: hidden;
     transition: 1s;
 }
 #box_episodio:hover{
-    background-color: rgb(32, 32, 32) !important;
-    border-color: rgba(187, 128, 0, 0.658);
+    background-color: rgb(19, 19, 19) !important;
+    border-color: rgb(241, 90, 34);
     transition: 1s;
 }
 
@@ -64,5 +65,5 @@ body{
     transition: transform .4s;
 }
 #spans{
-    color: rgb(255, 187, 0)
+    color: rgb(255, 203, 5);
 }
