@@ -11,17 +11,19 @@
 
         <div class="row justify-content-center">
 
-        <form  action="{{ url('animelist/create') }}" method="POST">
-        @csrf
-            <div class="col-4"></div>
+        
+            
 
 
-            <div class="col-4">
+            <div class="col-10 col-sm-8 col-md-7 col-lg-4 align-self-center mt-5 mb-1">
 
                 <!--  ---------------------------------------------LOGIN // SING IN----------------------------------- -->
                 <div class="login-formulario">
 
                     <h1>Nuevo Anime</h1>
+                    <form  action="{{ url('animelist/create') }}" method="POST">
+                    
+                    @csrf
 
                     <!--SING IN -->
                     <div class="user_box">
@@ -55,11 +57,13 @@
                     
 
                     <button type="submit" id="log-btn" class="btn btn-primary btn-lg btn-block mt-4">Añadir</button>
+
+                    </form>
                     
 
                 </div>
             </div>
-            <div class="col-4"></div>
+            
            
         </div>
     </div>

@@ -6,6 +6,7 @@ body{
   height: 100vh;
   overflow: hidden;
   font-family: 'Acme', sans-serif;
+  overflow: hidden;
 }
 h1{
   color:rgb(48, 48, 48);
@@ -18,14 +19,15 @@ h1:hover{
   }
 
 .login-formulario{
-margin-top: 50%;
-width:350px;
+margin-top: 10%;
+
 padding:40px 30px;
 border-radius: 12px;
 background-color: #e68b03;
 border-radius: 40px;
 border: solid;
 border-color: #9e5f01;  
+
 }
 #UserName{
   padding: 10px;
@@ -110,6 +112,7 @@ transition: 0.5s;
   position: absolute;
   left: 55%;
   top: 25vh;
+  z-index: -1;
 }
 
 
@@ -120,3 +123,10 @@ transition: 0.5s;
   overflow: hidden;
 
 }
+
+@media (max-width: 920px) {
+  .img1 img{ 
+    display: none;
+  }
+}
+   

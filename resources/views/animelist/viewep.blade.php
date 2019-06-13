@@ -23,7 +23,7 @@
                         @if($Previous=='1')
                         @else
                         <div class="text-left"><a class="btn btn-outline-info" id="btn"
-                            href="{{ url('/animelist/viewep/' . $Previous->id ) }}">After</a></div>
+                            href="{{ url('/animelist/viewep/' . $Previous->id ) }}"><i class="far fa-arrow-alt-circle-left fa-2x"></i></a></div>
                         @endif
                     </div>
 
@@ -38,7 +38,7 @@
                     <div class="col-4">
                         @if($Next=='1')
                         @else
-                        <div class="text-right" >   <a class="btn btn-outline-info "  id="btn" href="{{ url('/animelist/viewep/' . $Next->id  )}}">Next</a></div>
+                        <div class="text-right" >   <a class="btn btn-outline-info "  id="btn" href="{{ url('/animelist/viewep/' . $Next->id  )}}"><i class="far fa-arrow-alt-circle-right fa-2x"></i></a></div>
                         
                         @endif
                     </div>

@@ -11,14 +11,16 @@
 
         <div class="row justify-content-center">
 
-        <form   action="{{ url('animelist/edit/' . $anime->id) }}" method="POST">
-        {{method_field('PUT')}}
-        @csrf
-            <div class="col-3">
+        
+            <div class="col-10 col-sm-8 col-md-7 col-lg-4 align-self-center mt-5 mb-1">
+                <form   action="{{ url('animelist/edit/' . $anime->id) }}" method="POST">
+                {{method_field('PUT')}}
+                @csrf
                 <!--  ---------------------------------------------LOGIN // SING IN----------------------------------- -->
                 <div class="login-formulario" id="formulario_box" >
 
                     <h1>Modificar el anime: {{ $anime->title }}</h1>
+
 
                     <!--SING IN -->
                     <div class="user_box">
@@ -53,6 +55,7 @@
 
                     <button type="submit" id="log-btn" class="btn btn-primary btn-lg btn-block mt-4">Añadir</button>
                 </div>
+                </form>
             </div>
         </div>
             

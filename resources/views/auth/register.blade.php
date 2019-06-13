@@ -7,9 +7,7 @@
         <!--row1 -->
 
         <div class="row justify-content-center">
-            <div class="colcol-4"></div>
-            <div class="colcol-4">
-
+            <div class="col-10 col-sm-8 col-md-7 col-lg-4 align-self-center mt-5 mb-1">
                 <!--  ---------------------------------------------LOGIN // SING IN----------------------------------- -->
                 <div class="login-formulario">
 
@@ -57,7 +55,6 @@
                     </form>
                 </div>
             </div>
-            <div class="colcol-4"></div>
         </div>
     </div>
     <div class="img1"><img id="imagen_inicial" src="<?php echo asset('media/back.png')?>" alt="" class="img-fluid p2"></div>

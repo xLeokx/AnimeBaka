@@ -75,10 +75,25 @@ img{
     max-width: 1900px;
   
   }
-  .img1{
+.img1{
     position: absolute;
     top: 150px;
     z-index: -1 ;
-  }
+}
+#strellafav{
+    position: relative;
+    float: left;
+    top: 40px;
+}
+a .linkfav{
+    color: rgb(255, 217, 0) !important;
+    text-decoration: none !important;
+    float:left;
+    overflow:hidden;
+    position: relative;
+    float: left;
+}
+
+
   
 

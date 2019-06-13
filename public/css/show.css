@@ -63,3 +63,6 @@ body{
     transform: scale(1.1);
     transition: transform .4s;
 }
+#spans{
+    color: rgb(255, 187, 0)
+}

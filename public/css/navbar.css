@@ -16,7 +16,7 @@ body{
 }
 #search_box{
     position: absolute;
-    left: 42%;
+    left: 48%;
     background-color: #e68b03;
     height: 55px;
     border-radius: 30px;
@@ -54,11 +54,14 @@ body{
     font-size: 20px;
     transition: 0.3s ;
     text-decoration: none !important;
+    background-color: #242424;
+    
+  
     
       
 }
 #search_box :hover > #search_input {
-    width: 280px;
+    width: 180px;
     margin-left: 20px;
     transition: 0.9s;
 }
@@ -106,6 +109,39 @@ body{
    height: 80px;
   
   }
+
+  @media (max-width: 900px) {
+    #nav_color{
+        
+        height: 100px;
+       
+    }
+
+   
+}
+     
+@media (max-width: 1000px) {
+    #search_box :hover > #search_input {
+        width: 70px;
+        margin-left: 20px;
+        transition: 0.9s;
+    }
+}
+
+@media (max-width: 765px) {
+    #navbarNavAltMarkup {
+        border:solid;
+      border-color: #e68b03;
+    }
+    #search_box{
+        display: none;
+    }
+    #miname{
+        display: none;
+    }
+}
+
+    
 
 
 

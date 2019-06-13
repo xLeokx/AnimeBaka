@@ -12,11 +12,25 @@
            
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-8 align-self-center  mb-4 " > 
-        <h2> <strong>{{$anime->title}}</strong> </h2>
-            <h5 class="mt-4">Año: {{$anime->year}}</h5>
-            <h5>Director: {{$anime->director}}</h5>
-            <h5>Nota: {{$anime->nota}}</h5>
-            <p><strong><h5>Resumen:</h5></strong> {{$anime->synopsis}}</p>
+            <h2> <strong>{{$anime->title}}</strong> </h2>
+            <h5><strong>Director : </strong><span id="spans">{{$anime->director}}</span> </h5>
+            <h5><strong>Año : </strong><span id="spans">{{$anime->year}}</span> </h5>
+            <h5><strong>Nota : </strong><span id="spans">{{$anime->nota}}</span></h5>
+            <h5><strong>Resumen : </strong><span id="spans">{{$anime->synopsis}}</span></h5>
+
+            
+            
+            
+            
+            
+
+
+
+
+
+
+
+
             <a class="btn btn-outline-info" id="btn" href="{{ action('AnimelistController@getIndex') }}">Volver al listado</a>
             @if(Auth::user()->is_admin == true)
             <a class="btn btn-outline-info" id="btn" href="{{ url('/animelist/edit/' . $anime->id ) }}">Editar Anime</a>
@@ -32,8 +46,8 @@
     @foreach( $Episodios as $Episodio )
     <div class="col-0 col-sm-10 col-md-4 col-lg-4 align-self-center mt-3">
     @if(Auth::user()->is_admin == true)
-        <a class="btn btn-outline-info" id="btn" href="{{ url('/animelist/editep/' . $Episodio->id ) }}">Modificar Ep </a> 
-        <a class="btn btn-outline-info" id="btn" href="/animelist/deleteep/{{$Episodio->id}}">Delete</a>
+        <a class="btn btn-outline-info" id="btn" href="{{ url('/animelist/editep/' . $Episodio->id ) }}">Editar Episodio </a> 
+        <a class="btn btn-outline-info" id="btn" href="/animelist/deleteep/{{$Episodio->id}}">Borrar Episodio</a>
         @endif
       
     </div>
